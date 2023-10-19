@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>load ${employee.getFirstName()}</title>
+    <title> load <span th:text="${employee.getFirstName()}"></span></title>
+
+</head>
+    <body>
+        <div>
+            <div class="container mt-3">
+                <form action= "/consult-id" method="GET">
+                    <div class="form-group">
+                        <input type="hidden" class="form-control" id="modificate" name="name" th:value="${employee.getEmployeeId()}">
+                        <input type="hidden" class="form-control" id="boolean" name="modificate" th:value= "true">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Modificate Employee</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="container mt-3">
+            <form action="/delete-employee" method="POST" onsubmit="return confirm('Are you sure that you want delete this employee?')">
+                <input type="hidden" id="id" name="id" th:value="${employee.getEmployeeId()}">
+                <button type="submit" class="btn btn-primary">Delete</button>
+            </form>
+        </div>
+
+        <div class="container mt-5">
+
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Employee ID</th>
+                    <th>Name</th>
+                    <th>Role</th>
+                    <th>Salary</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td th:text="${employee.getEmployeeId()}"></td>
+                    <td th:text="${employee.getFirtsName()} + ' ' + ${employee.getLastName()}"></td>
+                    <td th:text="${employee.getRole()}"></td>
+                    <td th:text="${employee.getSalary()}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="container mt-3">
+            <form action= "/consult-all" method="GET">
+                <button type="submit" class="btn btn-primary">View All</button>
+            </form>
+
+        </div>
+    </body>
+
+</html>

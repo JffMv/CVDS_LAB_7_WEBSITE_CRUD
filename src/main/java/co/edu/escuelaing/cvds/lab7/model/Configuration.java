@@ -73,4 +73,5 @@ public class Configuration {
     public String toString() {
         return "Configuration [propiedad = " + propiedad + ", valor = " + valor + "]";
     }
+
 }
