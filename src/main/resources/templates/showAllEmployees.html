@@ -11,7 +11,9 @@
     <title>Everybody Employees</title>
 </head>
 <body>
+    <div class="container">
     <h1> Table of Employees</h1>
+    </div>
     <div class="container mt-3">
         <button type="submit" class="btn btn-primary" onclick="window.location.href = '/create-new'">Create New Employee</button>
     </div>
@@ -20,7 +22,7 @@
         <form action= "/consult-id" method="GET">
             <div class="form-group">
                 <label for="consulta">Input ID of employee for see or modificate:</label>
-                <input type="number" class="form-control" id="consulta" name="id" placeholder="Escribe algo">
+                <input type="number" class="form-control" id="consulta" name="id" placeholder="Write ID" required>
                 <input type="hidden" class="form-control" id="boolean" name="modificate" th:value= "false">
             </div>
             <button type="submit" class="btn btn-primary">Consult</button>
